@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Bike Service | Speed Bike Garage</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-bike"><i class="fa-solid fa-motorcycle"></i></div>
+  </div>
+
+  <!-- Top Bar -->
+  <div class="top-bar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center py-2">
+      <div class="top-bar-info">
+        <span><i class="fa-solid fa-phone"></i> +91 98765 43210</span>
+        <span><i class="fa-solid fa-envelope"></i> info@speedbikegarage.com</span>
+      </div>
+      <div class="top-bar-social">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top main-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-motorcycle"></i> SPEED<span>BIKE</span> GARAGE
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+          <li class="nav-item"><a class="btn btn-book ms-lg-2 active" href="booking.html">Book Service</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner Header -->
+  <section class="bg-dark text-white py-5">
+    <div class="container text-center py-3">
+      <span class="badge bg-danger px-3 py-2 text-uppercase mb-2">Online Appointment</span>
+      <h1 class="display-4 fw-bold">Book Your Service Slot</h1>
+      <p class="lead text-light max-w-600 mx-auto">Fill in the details below to schedule your motorcycle maintenance.</p>
+    </div>
+  </section>
+
+  <!-- Booking Form Container -->
+  <section class="py-5 bg-light">
+    <div class="container py-3">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-white">
+            <h4 class="fw-bold mb-4 text-danger border-bottom pb-3"><i class="fa-solid fa-clipboard-list me-2"></i>Service Booking Form</h4>
+            
+            <form id="htmlBookingForm" class="needs-validation" novalidate>
+              <div class="row g-3">
+                <!-- Customer Name -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
+                  <input type="text" id="custName" class="form-control" placeholder="e.g. Rahul Sharma" required>
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+
+                <!-- Phone -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Phone Number <span class="text-danger">*</span></label>
+                  <input type="tel" id="custPhone" class="form-control" placeholder="e.g. 9876543210" required pattern="[0-9]{10}">
+                  <div class="invalid-feedback">Please enter a valid 10-digit phone number.</div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-12">
+                  <label class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                  <input type="email" id="custEmail" class="form-control" placeholder="e.g. rahul@example.com" required>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+
+                <!-- Bike Company -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Bike Brand / Company <span class="text-danger">*</span></label>
+                  <select id="bikeCompany" class="form-select" required>
+                    <option value="">Select Brand</option>
+                    <option value="Royal Enfield">Royal Enfield</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Hero">Hero MotoCorp</option>
+                    <option value="TVS">TVS Motors</option>
+                    <option value="Yamaha">Yamaha</option>
+                    <option value="Bajaj">Bajaj Auto</option>
+                    <option value="KTM">KTM</option>
+                    <option value="Suzuki">Suzuki</option>
+                    <option value="Other">Other Brand</option>
+                  </select>
+                  <div class="invalid-feedback">Please select your bike brand.</div>
+                </div>
+
+                <!-- Bike Model -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Bike Model <span class="text-danger">*</span></label>
+                  <input type="text" id="bikeModel" class="form-control" placeholder="e.g. Classic 350 / Pulsar 220" required>
+                  <div class="invalid-feedback">Please enter your bike model.</div>
+                </div>
+
+                <!-- Reg Number -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Registration Number <span class="text-danger">*</span></label>
+                  <input type="text" id="regNumber" class="form-control text-uppercase" placeholder="e.g. GJ01AB1234" required>
+                  <div class="invalid-feedback">Please enter registration number.</div>
+                </div>
+
+                <!-- Service Selection -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Select Required Service <span class="text-danger">*</span></label>
+                  <select id="serviceSelect" class="form-select" required>
+                    <option value="">Choose Service Package</option>
+                    <option value="General Service (₹499)">General Service - ₹499.00</option>
+                    <option value="Engine Repair (₹1,499)">Engine Repair - ₹1,499.00</option>
+                    <option value="Oil Change (₹349)">Oil Change - ₹349.00</option>
+                    <option value="Brake Repair (₹599)">Brake Repair - ₹599.00</option>
+                    <option value="Clutch Repair (₹899)">Clutch Repair - ₹899.00</option>
+                    <option value="Washing & Detailing (₹299)">Washing & Detailing - ₹299.00</option>
+                    <option value="Pickup & Drop (₹199)">Pickup & Drop Service - ₹199.00</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a service.</div>
+                </div>
+
+                <!-- Preferred Date -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Preferred Service Date <span class="text-danger">*</span></label>
+                  <input type="date" id="preferred_date" class="form-control" required>
+                  <div class="invalid-feedback">Please select preferred date.</div>
+                </div>
+
+                <!-- Preferred Time -->
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Preferred Time Slot <span class="text-danger">*</span></label>
+                  <select id="preferredTime" class="form-select" required>
+                    <option value="">Select Time Slot</option>
+                    <option value="09:00 AM - 11:00 AM">Morning (09:00 AM - 11:00 AM)</option>
+                    <option value="11:00 AM - 01:00 PM">Late Morning (11:00 AM - 01:00 PM)</option>
+                    <option value="02:00 PM - 04:00 PM">Afternoon (02:00 PM - 04:00 PM)</option>
+                    <option value="04:00 PM - 07:00 PM">Evening (04:00 PM - 07:00 PM)</option>
+                  </select>
+                  <div class="invalid-feedback">Please select time slot.</div>
+                </div>
+
+                <!-- Problem Description -->
+                <div class="col-md-12">
+                  <label class="form-label fw-semibold">Problem / Specific Notes (Optional)</label>
+                  <textarea id="problemDesc" class="form-control" rows="3" placeholder="Describe any noises, performance issues, or specific requests..."></textarea>
+                </div>
+
+                <div class="col-md-12 mt-4 text-center">
+                  <button type="submit" class="btn btn-danger btn-lg rounded-pill px-5 py-3 fw-bold w-100"><i class="fa-solid fa-paper-plane me-2"></i>Submit Booking Request</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Confirmation Modal -->
+  <div class="modal fade" id="bookingSuccessModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-body text-center p-4">
+          <div class="display-1 text-success mb-3"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 class="fw-bold">Booking Confirmed!</h3>
+          <p class="text-muted">Your booking code is: <strong id="generatedCode" class="text-danger fs-4">SBG260811-78A</strong></p>
+          <div class="bg-light p-3 rounded-3 text-start mb-3 small">
+            <p class="mb-1"><strong>Name:</strong> <span id="resName"></span></p>
+            <p class="mb-1"><strong>Vehicle:</strong> <span id="resBike"></span> (<span id="resReg"></span>)</p>
+            <p class="mb-1"><strong>Service:</strong> <span id="resService"></span></p>
+            <p class="mb-0"><strong>Slot:</strong> <span id="resDate"></span> at <span id="resTime"></span></p>
+          </div>
+          <p class="text-secondary small">Our team will call you shortly to confirm doorstep pickup.</p>
+          <button type="button" class="btn btn-dark rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-3">
+    <div class="container text-center small text-secondary">
+      <p class="mb-0">&copy; 2026 Speed Bike Garage. All Rights Reserved. | <a href="index.html" class="text-danger">Back to Home</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script>
+    document.getElementById('htmlBookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (this.checkValidity()) {
+        const code = 'SBG' + new Date().toISOString().slice(2,10).replace(/-/g,'') + '-' + Math.random().toString(36).substring(2,6).toUpperCase();
+        document.getElementById('generatedCode').innerText = code;
+        document.getElementById('resName').innerText = document.getElementById('custName').value;
+        document.getElementById('resBike').innerText = document.getElementById('bikeCompany').value + ' ' + document.getElementById('bikeModel').value;
+        document.getElementById('resReg').innerText = document.getElementById('regNumber').value;
+        document.getElementById('resService').innerText = document.getElementById('serviceSelect').value;
+        document.getElementById('resDate').innerText = document.getElementById('preferred_date').value;
+        document.getElementById('resTime').innerText = document.getElementById('preferredTime').value;
+
+        const modal = new bootstrap.Modal(document.getElementById('bookingSuccessModal'));
+        modal.show();
+      }
+    });
+  </script>
+</body>
+</html>
